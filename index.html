@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lean Canvas - Viandas Altas en Proteínas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 style="text-align: center; color: white;">Lean Canvas</h1>
+    <div class="canvas-container">
+        <div class="canvas-box problem" onclick="openModal('Problem', 'What are your customers biggest problems?')"><strong>Problem</strong></div>
+        <div class="canvas-box solution" onclick="openModal('Solution', 'What are your solutions for each problem?')"><strong>Solution</strong></div>
+        <div class="canvas-box value-proposition" onclick="openModal('Unique Value Proposition', 'What is your clear and simple mission statement that will turn your target prospect into a customer?')"><strong>Unique Value Proposition</strong></div>
+        <div class="canvas-box unfair-advantage" onclick="openModal('Unfair Advantage', 'What makes you unique that can’t be copied, adopted, or bought?')"><strong>Unfair Advantage</strong></div>
+        <div class="canvas-box customers" onclick="openModal('Customer Segments', 'Who are your target customers and what market are they in?')"><strong>Customer Segments</strong></div>
+        <div class="canvas-box alternatives" onclick="openModal('Existing Alternatives', 'Are these current problems solved? If so, how?')"><strong>Existing Alternatives</strong></div>
+        <div class="canvas-box key-metrics" onclick="openModal('Key Metrics', 'What analytical numbers will prove your business is doing well? What do you expect those figures to be?')"><strong>Key Metrics</strong></div>
+        <div class="canvas-box concept" onclick="openModal('High Level Concept', 'Are these current problems solved? If so, how?')"><strong>High Level Concept</strong></div>
+        <div class="canvas-box channels" onclick="openModal('Channels', 'How will you reach your customers?')"><strong>Channels</strong></div>
+        <div class="canvas-box early-adopters" onclick="openModal('Early Adopters', 'Who are your most valuable customers?')"><strong>Early Adopters</strong></div>
+        <div class="canvas-box costs" onclick="openModal('Cost Structure', 'What are your significant fixed and variable costs?')"><strong>Cost Structure</strong></div>
+        <div class="canvas-box revenue" onclick="openModal('Revenue Streams', 'How much money will you make and from which channels? What is your Total Addressable Market (TAM)?')"><strong>Revenue Streams</strong></div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-body"></p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
