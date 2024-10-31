@@ -1,23 +1,23 @@
-function openModal(title, content) {
-    document.getElementById('modal-title').innerText = title;
-    document.getElementById('modal-body').innerText = content;
-    const modal = document.getElementById('modal');
-    modal.style.display = 'flex';
-    document.body.classList.add('modal-open');
+// script.js
 
-    modal.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
+const boxes = document.querySelectorAll('.box');
+const modal = document.createElement('div');
+modal.classList.add('modal');
+document.body.appendChild(modal);
+
+boxes.forEach(box => {
+    box.addEventListener('click', () => {
+        modal.innerHTML = `
+            <div class="modal-content">
+                <h2>${box.querySelector('h2').innerText}</h2>
+                <p>${box.querySelector('p').innerText}</p>
+                ${box.querySelector('h3') ? `<h3>${box.querySelector('h3').innerText}</h3><p>${box.querySelectorAll('p')[1].innerText}</p>` : ''}
+            </div>
+        `;
+        modal.style.display = 'flex';
     });
-}
+});
 
-function closeModal() {
-    const modal = document.getElementById('modal');
-    modal.classList.add('fade-out'); // Añadimos la clase para la animación de salida
-    setTimeout(() => {
-        modal.style.display = 'none';
-        modal.classList.remove('fade-out');
-        document.body.classList.remove('modal-open');
-    }, 300); // Duración de la animación
-}
+modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
